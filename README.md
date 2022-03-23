@@ -29,13 +29,13 @@ b) the presence of single fish in the stream
 c) the presence of cyclic congestion and intersections
 (d) implicit class boundaries
 
-## Parameters
+## YOLO Parameters
 ```
 hyperparameters: lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
 
 #custom model
 # parameters
-nc: {num_classes}  # number of classes
+nc: {1}  # number of classes
 depth_multiple: 0.33  # model depth multiple
 width_multiple: 0.50  # layer channel multiple
 
@@ -82,6 +82,25 @@ head:
 
    [[17, 20, 23], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
   ]
+```
+## ResNet Parameters
+```
+# define the number of channels in the input, number of classes,
+# and number of levels in the U-Net model
+NUM_CHANNELS = 1
+NUM_CLASSES = 2
+NUM_LEVELS = 3
+# initialize learning rate, number of epochs to train for, and the
+# batch size
+INIT_LR = 0.001
+NUM_EPOCHS = 40
+BATCH_SIZE = 64
+# define the input image dimensions
+INPUT_IMAGE_WIDTH = 128
+INPUT_IMAGE_HEIGHT = 128
+# define threshold to filter weak predictions
+THRESHOLD = 0.5
+
 ```
 ## Results
 In the course of the work, intermediate results were obtained for object detection using Yolov5, the results obtained on a small part of the dataset indicate that more data of target classes is needed (now one of the main difficulties - the disproportionality of the division of classes by photos, both in number and density of representatives of different classes), which, when cutting the original 8K photos into many small ones to a format suitable for Yolov5 training (in this case 640 pixels), creates a lot of "empty" photos that do not qualitatively increase accuracy, but are capable of making inappropriate noise (however, the study of the heterogeneity of objects in the photos showed that objects that are similar to the target objects of the class are not so common).
