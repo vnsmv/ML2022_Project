@@ -1,0 +1,22 @@
+{
+    "os": "Linux-5.13.0-37-generic-x86_64-with-glibc2.31",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-03-22T22:15:26.022415",
+    "startedAt": "2022-03-22T22:15:23.977628",
+    "docker": null,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/ivan/Pytorch-UNet/train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/milesial/Pytorch-UNet.git",
+        "commit": "9a6ee84c50390306e24bb369d1c24d2fdd9d7e60"
+    },
+    "email": null,
+    "root": "/home/ivan/Pytorch-UNet",
+    "host": "Flexxx-PC",
+    "username": "ivan",
+    "executable": "/home/ivan/anaconda3/bin/python"
+}

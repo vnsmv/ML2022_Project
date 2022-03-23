@@ -1,0 +1,17 @@
+['data/imgs']
+['data/masks']
+['data/imgs']
+['data/masks']
+['data/imgs']
+['data/masks']
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   3
+        Validation size: 0
+        Checkpoints:     True
+        Device:          cpu
+        Images scaling:  0.5
+        Mixed Precision: False
+Epoch 1/5:   0%|                                         | 0/3 [00:00<?, ?img/s]/home/ivan/anaconda3/lib/python3.9/site-packages/torch/autocast_mode.py:141: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling

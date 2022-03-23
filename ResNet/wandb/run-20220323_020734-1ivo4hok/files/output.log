@@ -1,0 +1,41 @@
+###################
+data/imgs
+data/imgs/DSCF1747.jpg
+['data/imgs']
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   1
+        Validation size: 0
+        Checkpoints:     True
+        Device:          cpu
+        Images scaling:  0.5
+        Mixed Precision: False
+Epoch 1/5:   0%|                                              | 0/1 [00:00<?, ?img/s]
+Traceback (most recent call last):
+  File "/home/ivan/Pytorch-UNet/train.py", line 185, in <module>
+    train_net(net=net,
+  File "/home/ivan/Pytorch-UNet/train.py", line 79, in train_net
+    for batch in train_loader:
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/_utils.py", line 434, in reraise
+    raise exception
+NameError: Caught NameError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ivan/anaconda3/lib/python3.9/site-packages/torch/utils/data/dataset.py", line 363, in __getitem__
+    return self.dataset[self.indices[idx]]
+  File "/home/ivan/Pytorch-UNet/utils/data_loading.py", line 78, in __getitem__
+    assert len(mask_file) == 1, f'Either no mask or multiple masks found for the ID {name}: {mask_file}'
+NameError: name 'mask_file' is not defined
