@@ -16,6 +16,8 @@ git clone https://github.com/justfollowthesun/ML2022_Project
 cd ML2022_Project
 pip install -r requirements.txt 
 ```
+After downloading the dataset from Roboflow (it will load inside the yolov5 folder in folder DigitalSea), you need to move the train, test, val folders to the same directory with the yolov5 folder (that is, "in parallel"), and the data file.yaml - move from dataset to yolov5 root folder
+
 ## Data labeling 
 There are three types of classes in the prepared dataset.
 The class of single fish is simply called a "fish", it is highlighted by the corresponding rectangular bounding box, while marking this particular class was associated with the greatest difficulties and time costs due to:
